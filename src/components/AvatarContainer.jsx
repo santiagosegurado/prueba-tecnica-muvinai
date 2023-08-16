@@ -31,7 +31,7 @@ export const AvatarContainer = () => {
             opacity: 0.6,
           }}
         >
-          Generente
+          Gerente
         </Typography>
       </Box>
       <KeyboardArrowDown />

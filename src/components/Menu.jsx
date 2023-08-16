@@ -1,4 +1,4 @@
-import { Box, Stack, Typography } from "@mui/material";
+import { Box, Button, Divider, Stack, Typography } from "@mui/material";
 import {
   DashboardOutlined,
   SplitscreenOutlined,
@@ -13,37 +13,43 @@ export const Menu = () => {
 
   return (
     <Stack gap={3}>
-      <Box
+      <Button
         sx={{
           color: "#333",
           opacity: 0.6,
           display: "flex",
           gap: 2,
           padding: "20px",
-          cursor: 'pointer'
-
+          cursor: "pointer",
+          fontFamily: "inherit",
+          textTransform: "capitalize",
+          justifyContent: "flex-start",
+          borderRadius: 50,
         }}
       >
         <DashboardOutlined />
         <Typography sx={{ fontFamily: "inherit" }}>Dashboard</Typography>
-      </Box>
-      <Box
+      </Button>
+      <Button
         sx={{
           color: "#333",
           opacity: 0.6,
           display: "flex",
           gap: 2,
           padding: "20px",
-          cursor: 'pointer'
+          cursor: "pointer",
+          fontFamily: "inherit",
+          textTransform: "capitalize",
+          justifyContent: "flex-start",
+          borderRadius: 50,
         }}
       >
         <SplitscreenOutlined />
         <Typography sx={{ fontFamily: "inherit" }}>Tareas</Typography>
-      </Box>
-      <Box
+      </Button>
+      <Button
         sx={{
-          color: "#333",
-          opacity: 0.6,
+          color: theme.palette.primary.main,
           display: "flex",
           gap: 3,
           backgroundColor: "rgba(5, 161, 128, 0.2)",
@@ -52,7 +58,9 @@ export const Menu = () => {
           borderRadius: 50,
           justifyContent: "space-between",
           width: "100%",
-          cursor: 'pointer'
+          cursor: "pointer",
+          textTransform: "capitalize",
+          fontFamily: "inherit",
         }}
       >
         <Box sx={{ display: "flex", flexDirection: "row", gap: 2 }}>
@@ -78,20 +86,25 @@ export const Menu = () => {
             fontWeight: 600,
           }}
         />
-      </Box>
-      <Box
+      </Button>
+      <Divider sx={{ marginBlock: 2, width: "90%", alignSelf: "center" }} />
+      <Button
         sx={{
           color: "#333",
           opacity: 0.6,
           display: "flex",
           gap: 2,
           padding: "20px",
-          cursor: 'pointer'
+          cursor: "pointer",
+          fontFamily: "inherit",
+          textTransform: "capitalize",
+          justifyContent: "flex-start",
+          borderRadius: 50,
         }}
       >
         <SettingsOutlined />
         <Typography sx={{ fontFamily: "inherit" }}>Ajustes</Typography>
-      </Box>
+      </Button>
     </Stack>
   );
 };
