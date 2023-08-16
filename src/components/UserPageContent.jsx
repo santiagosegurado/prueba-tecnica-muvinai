@@ -7,7 +7,7 @@ export const UserPageContent = () => {
 
   return (
     <Grid container>
-      <Grid item sm={8} >
+      <Grid item sm={9} >
         <Typography
           sx={{
             fontFamily: "inherit",
@@ -22,7 +22,7 @@ export const UserPageContent = () => {
         </Typography>
         <UserPageDetails/>
       </Grid>
-      <Grid item sm={4}>
+      <Grid item sm={3}>
         <Typography
           sx={{
             fontFamily: "inherit",

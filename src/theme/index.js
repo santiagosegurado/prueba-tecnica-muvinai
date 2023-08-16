@@ -13,5 +13,8 @@ export const theme = createTheme({
     container: {
       main: "#FFFFFF",
     },
+    button: {
+      main: "#333",
+    },
   },
 });

@@ -1,9 +1,10 @@
 import { Box, Button, Divider, Stack, Typography } from "@mui/material";
 import {
   DashboardOutlined,
-  SplitscreenOutlined,
   PersonOutlineOutlined,
   SettingsOutlined,
+  AccountBalanceOutlined,
+  DateRangeOutlined
 } from "@mui/icons-material";
 import { useTheme } from "@emotion/react";
 import { KeyboardArrowRight } from "@mui/icons-material";
@@ -12,7 +13,7 @@ export const Menu = () => {
   const theme = useTheme();
 
   return (
-    <Stack gap={3}>
+    <Stack gap={1}>
       <Button
         sx={{
           color: "#333",
@@ -44,8 +45,8 @@ export const Menu = () => {
           borderRadius: 50,
         }}
       >
-        <SplitscreenOutlined />
-        <Typography sx={{ fontFamily: "inherit" }}>Tareas</Typography>
+        <DateRangeOutlined />
+        <Typography sx={{ fontFamily: "inherit" }}>Calendario</Typography>
       </Button>
       <Button
         sx={{
@@ -86,6 +87,23 @@ export const Menu = () => {
             fontWeight: 600,
           }}
         />
+      </Button>
+      <Button
+        sx={{
+          color: "#333",
+          opacity: 0.6,
+          display: "flex",
+          gap: 2,
+          padding: "20px",
+          cursor: "pointer",
+          fontFamily: "inherit",
+          textTransform: "capitalize",
+          justifyContent: "flex-start",
+          borderRadius: 50,
+        }}
+      >
+        <AccountBalanceOutlined />
+        <Typography sx={{ fontFamily: "inherit" }}>Pagos</Typography>
       </Button>
       <Divider sx={{ marginBlock: 2, width: "90%", alignSelf: "center" }} />
       <Button
