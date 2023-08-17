@@ -36,7 +36,7 @@ pnpm install
 
 ## Despliegue 📦
 
-_Para poder ver una vista rapida de la prueba, estara desplegado en vercel: _
+_Para poder ver una vista rapida de la prueba, estara desplegado en vercel:_
 [Prueba Tecnica](https://prueba-tecnica-muvinai.vercel.app/)
 
 ## Construido con 🛠️
