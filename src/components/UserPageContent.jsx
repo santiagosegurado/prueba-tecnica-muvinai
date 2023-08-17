@@ -1,5 +1,5 @@
 import { useTheme } from "@emotion/react";
-import { Box, Grid } from "@mui/material";
+import { Alert, Box, Grid, Snackbar } from "@mui/material";
 import { UserPageDetails } from "./UserPageDetails";
 import { UserPageFiles } from "./UserPageFiles";
 import { UserPageTimeline } from "./UserPageTimeline";
@@ -7,9 +7,24 @@ import { CustomButton } from "./CustomButton";
 import { CouponList } from "./CouponList";
 import { CustomTitle } from "./CustomTitle";
 import { TrackEditionUserPage } from "./TrackEditionUserPage";
+import { useState } from "react";
 
 export const UserPageContent = () => {
   const theme = useTheme();
+
+  const [open, setOpen] = useState(false);
+
+  const handleClick = () => {
+    setOpen(true);
+  };
+
+  const handleClose = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+
+    setOpen(false);
+  };
 
   return (
     <>
@@ -43,7 +58,17 @@ export const UserPageContent = () => {
               fontSize={16}
               padding={"10px 20px"}
               text={"Guardar"}
+              handleClick={handleClick}
             />
+            <Snackbar open={open} autoHideDuration={3000} onClose={handleClose}>
+              <Alert
+                onClose={handleClose}
+                severity="success"
+                sx={{ width: "100%" }}
+              >
+                Perfil modificado con exito!
+              </Alert>
+            </Snackbar>
           </Box>
         </Grid>
         <Grid item sm={4}>
@@ -120,7 +145,7 @@ export const UserPageContent = () => {
             justifyContent: "space-between",
           }}
         >
-          <Box sx={{ width: '50%' }}>
+          <Box sx={{ width: "50%" }}>
             <CustomTitle
               fontSize={17}
               fontWeight={500}

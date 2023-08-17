@@ -1,8 +1,26 @@
 import { Box, Input, Typography } from "@mui/material";
 import { CustomButton } from "./CustomButton";
 import { CustomInput } from "./CustomInput";
+import { useTheme } from "@emotion/react";
+import { useState } from "react";
 
 export const UserPageFiles = () => {
+  const theme = useTheme();
+
+  const [localImg, setLocalImg] = useState(null);
+
+  const onSelectedImg = (e) => {
+    const file = e.target.files[0];
+
+    if (!file) {
+      return;
+    }
+
+    const fr = new FileReader();
+    fr.onload = () => setLocalImg(fr.result);
+    fr.readAsDataURL(file);
+  };
+
   const imgFileContainer = {
     display: "flex",
     width: 300,
@@ -19,7 +37,7 @@ export const UserPageFiles = () => {
 
   const labelContainer = {
     display: "flex",
-    background: "#eeebeb",
+    background: theme.palette.container.main,
     padding: 2,
     borderRadius: 170,
     alignItems: "center",
@@ -34,20 +52,35 @@ export const UserPageFiles = () => {
   return (
     <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
       <Box sx={imgFileContainer}>
-        <img
-          src="https://www.runningcorrer.com.ar/wprunning/wp-content/uploads/2016/03/Certificado-Aptitud-Fisica.jpg"
-          alt="Apto medico"
-          width="100%"
-          height="100%"
-          style={{ borderRadius: 10 }}
-        />
+        {localImg ? (
+          <img
+            src={localImg}
+            alt="Apto medico"
+            width="100%"
+            height="100%"
+            style={{ borderRadius: 10 }}
+          />
+        ) : (
+          <img
+            src="https://www.runningcorrer.com.ar/wprunning/wp-content/uploads/2016/03/Certificado-Aptitud-Fisica.jpg"
+            alt="Apto medico"
+            width="100%"
+            height="100%"
+            style={{ borderRadius: 10 }}
+          />
+        )}
         <Box sx={labelContainer} id="target">
-          <label htmlFor="input">
+          <label htmlFor="inputFile">
             <Typography sx={{ fontFamily: "inherit", cursor: "pointer" }}>
               Subir Archivo
             </Typography>
           </label>
-          <Input id="input" type="file" sx={{ display: "none" }}></Input>
+          <Input
+            id="inputFile"
+            type="file"
+            sx={{ display: "none" }}
+            onChange={onSelectedImg}
+          ></Input>
         </Box>
       </Box>
       <Box
