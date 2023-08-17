@@ -1,41 +1,19 @@
-import { Box, Grid } from "@mui/material";
-import { Sidebar } from "./components/Sidebar";
-import { UserPage } from "./components/UserPage";
-import { useTheme } from "@emotion/react";
+import { ThemeProvider } from "@emotion/react";
+import { themeDark, themeLight } from "./theme";
+import { CssBaseline } from "@mui/material";
+import { Layout } from "./components/Layout";
+import { useModeStore } from "./store/modeStore";
 
 function App() {
-  const theme = useTheme();
+
+  const mode = useModeStore(store => store.mode)
 
   return (
-    <Box
-      sx={{
-        height: "100vh",
-        p: 2,
-        backgroundColor: theme.palette.secondary.main,
-        display: "flex",
-        justifyContent: "center",
-        overflow: 'hidden'
-      }}
-    >
-      <Grid container maxWidth="xl">
-        <Grid item sm={3}>
-          <Sidebar />
-        </Grid>
-        <Grid
-          item
-          sm={9}
-          sx={{
-            background: theme.palette.container.main,
-            height: "calc(100vh - 36px)",
-            paddingBlock: 3,
-            paddingInline: 4,
-            borderRadius: 10,
-          }}
-        >
-          <UserPage />
-        </Grid>
-      </Grid>
-    </Box>
+    <ThemeProvider theme={ mode === 'light' ? themeLight : themeDark}>
+      <CssBaseline />
+
+      <Layout />
+    </ThemeProvider>
   );
 }
 

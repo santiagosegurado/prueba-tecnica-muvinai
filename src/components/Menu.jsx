@@ -4,7 +4,7 @@ import {
   PersonOutlineOutlined,
   SettingsOutlined,
   AccountBalanceOutlined,
-  DateRangeOutlined
+  DateRangeOutlined,
 } from "@mui/icons-material";
 import { useTheme } from "@emotion/react";
 import { KeyboardArrowRight } from "@mui/icons-material";
@@ -16,7 +16,7 @@ export const Menu = () => {
     <Stack gap={1}>
       <Button
         sx={{
-          color: "#333",
+          color: theme.palette.button.main,
           opacity: 0.6,
           display: "flex",
           gap: 2,
@@ -33,7 +33,7 @@ export const Menu = () => {
       </Button>
       <Button
         sx={{
-          color: "#333",
+          color: theme.palette.button.main,
           opacity: 0.6,
           display: "flex",
           gap: 2,
@@ -90,7 +90,7 @@ export const Menu = () => {
       </Button>
       <Button
         sx={{
-          color: "#333",
+          color: theme.palette.button.main,
           opacity: 0.6,
           display: "flex",
           gap: 2,
@@ -108,7 +108,7 @@ export const Menu = () => {
       <Divider sx={{ marginBlock: 2, width: "90%", alignSelf: "center" }} />
       <Button
         sx={{
-          color: "#333",
+          color: theme.palette.button.main,
           opacity: 0.6,
           display: "flex",
           gap: 2,

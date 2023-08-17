@@ -1,19 +1,11 @@
-import { Box, Input, Typography } from "@mui/material";
+import { Box, Input } from "@mui/material";
+import { CustomTitle } from "./CustomTitle";
 
 // eslint-disable-next-line react/prop-types
 export const CustomInput = ({ placeholder, value, type }) => {
   return (
-    <Box>
-      <Typography
-        sx={{
-          fontFamily: "inherit",
-          fontSize: 12,
-          opacity: 0.5,
-          fontWeight: 500,
-        }}
-      >
-        {placeholder}
-      </Typography>
+    <Box> 
+      <CustomTitle fontSize={12} opacity={0.5} fontWeight={500} title={placeholder}/>
       <Input
         value={value}
         type={type}

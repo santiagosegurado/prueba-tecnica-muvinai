@@ -27,7 +27,7 @@ export const UserPageInput = () => {
 
       <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
         <CustomInput
-          value={"Plan por mes"}
+          value={"Plan Simple"}
           placeholder={"Plan activo"}
           type={"text"}
         />

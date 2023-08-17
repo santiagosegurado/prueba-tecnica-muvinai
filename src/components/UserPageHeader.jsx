@@ -1,7 +1,10 @@
-import { Box, Button, Typography } from "@mui/material";
+import { Box, Button } from "@mui/material";
 import { KeyboardBackspaceOutlined, EastOutlined } from "@mui/icons-material";
+import { CustomTitle } from "./CustomTitle";
+import { useTheme } from "@emotion/react";
 
 export const UserPageHeader = () => {
+  const theme = useTheme()
   return (
     <Box
       sx={{
@@ -19,12 +22,12 @@ export const UserPageHeader = () => {
           gap: 1,
           textTransform: "capitalize",
           fontFamily: "inherit",
-          color: "#333",
+          color: theme.palette.button.main,
           borderRadius: 50,
         }}
       >
         <KeyboardBackspaceOutlined />
-        <Typography sx={{ fontFamily: "inherit" }}>Atras</Typography>
+        <CustomTitle title={"Atras"} />
       </Button>
 
       <Button
@@ -33,13 +36,13 @@ export const UserPageHeader = () => {
           flexDirection: "row",
           alignItems: "center",
           gap: 1,
-          textTransform: "capitalize",
+          textTransform: "initial",
           fontFamily: "inherit",
-          color: "#333",
+          color: theme.palette.button.main,
           borderRadius: 50,
         }}
       >
-        <Typography sx={{ fontFamily: "inherit" }}>Siguiente Perfil</Typography>
+        <CustomTitle title={"Siguiente perfil"} />
         <EastOutlined />
       </Button>
     </Box>

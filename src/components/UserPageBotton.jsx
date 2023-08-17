@@ -9,6 +9,7 @@ export const UserPageBotton = () => {
         display: "flex",
         flexDirection: "row",
         justifyContent: "space-between",
+        mt: 1
       }}
     >
       <Box sx={{ display: "flex", flexDirection: "row", gap: 2 }}>

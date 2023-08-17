@@ -2,7 +2,6 @@
 import { Button } from "@mui/material";
 
 export const CustomButton = ({ color, text, fontSize, padding }) => {
-  console.log({ color, text, fontSize, padding });
   return (
     <Button
       color={!color ? 'primary' : color }

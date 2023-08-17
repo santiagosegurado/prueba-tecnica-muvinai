@@ -1,11 +1,12 @@
 import { useTheme } from "@emotion/react";
-import { Box, Grid, Typography } from "@mui/material";
+import { Box, Grid } from "@mui/material";
 import { UserPageDetails } from "./UserPageDetails";
 import { UserPageFiles } from "./UserPageFiles";
 import { UserPageTimeline } from "./UserPageTimeline";
 import { CustomButton } from "./CustomButton";
 import { CouponList } from "./CouponList";
-// import { TrackEditionUserPage } from "./TrackEditionUserPage";
+import { CustomTitle } from "./CustomTitle";
+import { TrackEditionUserPage } from "./TrackEditionUserPage";
 
 export const UserPageContent = () => {
   const theme = useTheme();
@@ -29,18 +30,14 @@ export const UserPageContent = () => {
               gap: 2,
             }}
           >
-            <Typography
-              sx={{
-                fontFamily: "inherit",
-                fontSize: 20,
-                color: theme.palette.primary.main,
-                fontWeight: 500,
-                opacity: 0.6,
-                mb: 2,
-              }}
-            >
-              Datos Personales
-            </Typography>
+            <CustomTitle
+              fontSize={20}
+              fontWeight={500}
+              title={"Datos Personales"}
+              opacity={0.6}
+              color={theme.palette.primary.main}
+              margin={"0px 0px 16px 0px"}
+            />
             <UserPageDetails />
             <CustomButton
               fontSize={16}
@@ -50,53 +47,107 @@ export const UserPageContent = () => {
           </Box>
         </Grid>
         <Grid item sm={4}>
-          <Typography
-            sx={{
-              fontFamily: "inherit",
-              fontSize: 20,
-              color: theme.palette.primary.main,
-              fontWeight: 500,
-              opacity: 0.6,
-              mb: 2,
-            }}
-          >
-            Apto medico
-          </Typography>
+          <CustomTitle
+            fontSize={20}
+            fontWeight={500}
+            title={"Apto medico"}
+            opacity={0.6}
+            color={theme.palette.primary.main}
+            margin={"0px 0px 16px 0px"}
+          />
           <UserPageFiles />
         </Grid>
       </Grid>
       <Grid container>
         <Grid item sm={6}>
-          <Typography
-            sx={{
-              fontFamily: "inherit",
-              fontSize: 20,
-              color: theme.palette.primary.main,
-              fontWeight: 500,
-              opacity: 0.6,
-              mb: 2,
-            }}
-          >
-            Historial de pagos
-          </Typography>
+          <CustomTitle
+            fontSize={20}
+            fontWeight={500}
+            title={"Historial de pagos"}
+            opacity={0.6}
+            color={theme.palette.primary.main}
+            margin={"0px 0px 16px 0px"}
+          />
           <UserPageTimeline />
         </Grid>
         <Grid item sm={6}>
-          <Typography
-            sx={{
-              fontFamily: "inherit",
-              fontSize: 20,
-              color: theme.palette.primary.main,
-              fontWeight: 500,
-              opacity: 0.6,
-              mb: 2,
-            }}
-          >
-            Cupones
-          </Typography>
+          <CustomTitle
+            fontSize={20}
+            fontWeight={500}
+            title={"Cupones"}
+            opacity={0.6}
+            color={theme.palette.primary.main}
+            margin={"0px 0px 16px 0px"}
+          />
           <CouponList />
         </Grid>
       </Grid>
+      <Grid container>
+        <Grid item sm={6}>
+          <CustomTitle
+            fontSize={20}
+            fontWeight={500}
+            title={"Historial de edicion"}
+            opacity={0.6}
+            color={theme.palette.primary.main}
+            margin={"0px 0px 16px 0px"}
+          />
+          <TrackEditionUserPage />
+        </Grid>
+        <Grid item sm={6}></Grid>
+      </Grid>
+
+      <Box
+        sx={{
+          border: 1,
+          borderColor: theme.palette.error.main,
+          borderRadius: 2,
+          p: 2,
+        }}
+      >
+        <CustomTitle
+          fontSize={20}
+          fontWeight={500}
+          title={"Zona peligrosa"}
+          opacity={0.6}
+          color={theme.palette.error.main}
+          margin={"0px 0px 16px 0px"}
+        />
+        <Box
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+          }}
+        >
+          <Box sx={{ width: '50%' }}>
+            <CustomTitle
+              fontSize={17}
+              fontWeight={500}
+              title={"Invalidar acceso"}
+              opacity={1}
+              color={theme.palette.button.main}
+              margin={"0px 0px 0px 0px"}
+            />
+            <CustomTitle
+              fontSize={14}
+              fontWeight={400}
+              title={
+                "Funcionalidad para socios que se arrepienten de su compra y recuperan el 100% de su compra."
+              }
+              opacity={0.8}
+              color={theme.palette.button.main}
+              margin={"0px 0px 0px 0px"}
+            />
+          </Box>
+          <CustomButton
+            color={"error"}
+            fontSize={18}
+            text={"Invalidar"}
+            padding={"10px 40px"}
+          />
+        </Box>
+      </Box>
     </>
   );
 };

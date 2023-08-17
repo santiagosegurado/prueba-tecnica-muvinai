@@ -1,5 +1,6 @@
-import { Avatar, Box, Typography } from "@mui/material";
+import { Avatar, Box } from "@mui/material";
 import { KeyboardArrowDown } from "@mui/icons-material";
+import { CustomTitle } from "./CustomTitle";
 
 export const AvatarContainer = () => {
   return (
@@ -9,7 +10,7 @@ export const AvatarContainer = () => {
         gap: 3,
         alignItems: "center",
         cursor: "pointer",
-        padding: '20px'
+        padding: "20px",
       }}
     >
       <Avatar
@@ -18,21 +19,14 @@ export const AvatarContainer = () => {
         sx={{ width: 56, height: 56 }}
       />
       <Box sx={{ display: "flex", flexDirection: "column" }}>
-        <Typography
-          sx={{ fontFamily: "inherit", fontSize: 18, fontWeight: 500 }}
-        >
-          Juan Perez
-        </Typography>
-        <Typography
-          sx={{
-            fontFamily: "inherit",
-            fontSize: 14,
-            color: "#333",
-            opacity: 0.6,
-          }}
-        >
-          Gerente
-        </Typography>
+        <CustomTitle fontSize={18} fontWeight={500} title={"Juan Perez"} />
+        <CustomTitle
+          fontSize={14}
+          fontWeight={400}
+          title={"Gerente"}
+          color={"button"}
+          opacity={0.6}
+        />
       </Box>
       <KeyboardArrowDown />
     </Box>
