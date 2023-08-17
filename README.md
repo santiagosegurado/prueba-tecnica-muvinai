@@ -16,7 +16,7 @@ Mira **Deployment** para conocer como desplegar el proyecto.
 _Sofware que debemos instalar para poder hacer un correcto despliegue en local:_
 
 * Node.js
-* pnpm / npm 
+* pnpm 
 
 ### Instalación 🔧
 
@@ -24,11 +24,6 @@ _Una vez clonado el repositorio debemos ejecutar el siguiente comando:_
 
 _Instalar los paquetes de node_
 
-```
-npm install
-```
-
-_o con pnpm_
 
 ```
 pnpm install
