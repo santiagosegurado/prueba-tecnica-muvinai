@@ -69,7 +69,7 @@ export const UserPageBotton = () => {
         <IconButton size="large">
           <Email sx={{ fontSize: 30 }} />
         </IconButton>
-        <IconButton size="large" color="primary">
+        <IconButton size="large" color="primary" target="_blank" href="https://wa.link/9ruylc">
           <WhatsApp sx={{ fontSize: 30 }} />
         </IconButton>
       </Box>

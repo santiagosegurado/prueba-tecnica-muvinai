@@ -8,6 +8,7 @@ import { CouponList } from "./CouponList";
 import { CustomTitle } from "./CustomTitle";
 import { TrackEditionUserPage } from "./TrackEditionUserPage";
 import { useState } from "react";
+import { UserPageSedeTracker } from "./UserPageSedeTracker";
 
 export const UserPageContent = () => {
   const theme = useTheme();
@@ -107,7 +108,7 @@ export const UserPageContent = () => {
           <CouponList />
         </Grid>
       </Grid>
-      <Grid container>
+      <Grid container spacing={4}>
         <Grid item sm={6}>
           <CustomTitle
             fontSize={20}
@@ -119,7 +120,17 @@ export const UserPageContent = () => {
           />
           <TrackEditionUserPage />
         </Grid>
-        <Grid item sm={6}></Grid>
+        <Grid item sm={6}>
+        <CustomTitle
+            fontSize={20}
+            fontWeight={500}
+            title={"Historial de sedes"}
+            opacity={0.6}
+            color={theme.palette.primary.main}
+            margin={"0px 0px 16px 0px"}
+          />
+          <UserPageSedeTracker/>
+        </Grid>
       </Grid>
 
       <Box
