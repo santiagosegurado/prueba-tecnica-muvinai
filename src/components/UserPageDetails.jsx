@@ -8,7 +8,7 @@ export const UserPageDetails = () => {
         width={254}
         height={325}
         sx={{
-          filter: "drop-shadow(0px 5px 25px rgba(47, 128, 237, 0.20))",
+          filter: "drop-shadow(0px 5px 25px rgba(47, 128, 237, 0.30))",
           display: "flex",
           flexDirection: "column",
           alignItems: "center",

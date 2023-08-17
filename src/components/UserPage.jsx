@@ -13,8 +13,15 @@ export const UserPage = () => {
         height: "100%",
       }}
     >
-      <Box sx={{ display:'flex', flexDirection: 'column', gap: 3}}>
-        <UserPageHeader />
+      <UserPageHeader />
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          gap: 3,
+          overflow: "scroll",
+        }}
+      >
         <UserPageContent />
       </Box>
 

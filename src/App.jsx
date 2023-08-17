@@ -14,6 +14,7 @@ function App() {
         backgroundColor: theme.palette.secondary.main,
         display: "flex",
         justifyContent: "center",
+        overflow: 'hidden'
       }}
     >
       <Grid container maxWidth="xl">
