@@ -3,16 +3,16 @@ import { KeyboardArrowDown } from "@mui/icons-material";
 import { CustomTitle } from "./CustomTitle";
 
 export const AvatarContainer = () => {
+  const avatarContainer = {
+    display: "flex",
+    gap: 3,
+    alignItems: "center",
+    cursor: "pointer",
+    padding: "20px",
+  };
+
   return (
-    <Box
-      sx={{
-        display: "flex",
-        gap: 3,
-        alignItems: "center",
-        cursor: "pointer",
-        padding: "20px",
-      }}
-    >
+    <Box sx={avatarContainer}>
       <Avatar
         alt="User Img"
         src="https://msrealtors.org/wp-content/uploads/2018/11/no-user-image.gif"

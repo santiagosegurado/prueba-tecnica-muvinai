@@ -1,4 +1,4 @@
-import { Box, Button, Divider, Stack, Typography } from "@mui/material";
+import { Box, Button, Divider, Stack } from "@mui/material";
 import {
   DashboardOutlined,
   PersonOutlineOutlined,
@@ -8,62 +8,50 @@ import {
 } from "@mui/icons-material";
 import { useTheme } from "@emotion/react";
 import { KeyboardArrowRight } from "@mui/icons-material";
+import { CustomTitle } from "./CustomTitle";
 
 export const Menu = () => {
   const theme = useTheme();
 
+  const linkContainer = {
+    color: theme.palette.button.main,
+    opacity: 0.6,
+    display: "flex",
+    gap: 2,
+    padding: "20px",
+    cursor: "pointer",
+    fontFamily: "inherit",
+    textTransform: "capitalize",
+    justifyContent: "flex-start",
+    borderRadius: 50,
+  };
+
+  const linkActiveContainer = {
+    color: theme.palette.primary.main,
+    display: "flex",
+    gap: 3,
+    backgroundColor: "rgba(5, 161, 128, 0.2)",
+    padding: "20px",
+    alignItems: "center",
+    borderRadius: 50,
+    justifyContent: "space-between",
+    width: "100%",
+    cursor: "pointer",
+    textTransform: "capitalize",
+    fontFamily: "inherit",
+  };
+
   return (
     <Stack gap={1}>
-      <Button
-        sx={{
-          color: theme.palette.button.main,
-          opacity: 0.6,
-          display: "flex",
-          gap: 2,
-          padding: "20px",
-          cursor: "pointer",
-          fontFamily: "inherit",
-          textTransform: "capitalize",
-          justifyContent: "flex-start",
-          borderRadius: 50,
-        }}
-      >
+      <Button sx={linkContainer}>
         <DashboardOutlined />
-        <Typography sx={{ fontFamily: "inherit" }}>Dashboard</Typography>
+        <CustomTitle title={"Dashboard"} />
       </Button>
-      <Button
-        sx={{
-          color: theme.palette.button.main,
-          opacity: 0.6,
-          display: "flex",
-          gap: 2,
-          padding: "20px",
-          cursor: "pointer",
-          fontFamily: "inherit",
-          textTransform: "capitalize",
-          justifyContent: "flex-start",
-          borderRadius: 50,
-        }}
-      >
+      <Button sx={linkContainer}>
         <DateRangeOutlined />
-        <Typography sx={{ fontFamily: "inherit" }}>Calendario</Typography>
+        <CustomTitle title={"Calendario"} />
       </Button>
-      <Button
-        sx={{
-          color: theme.palette.primary.main,
-          display: "flex",
-          gap: 3,
-          backgroundColor: "rgba(5, 161, 128, 0.2)",
-          padding: "20px",
-          alignItems: "center",
-          borderRadius: 50,
-          justifyContent: "space-between",
-          width: "100%",
-          cursor: "pointer",
-          textTransform: "capitalize",
-          fontFamily: "inherit",
-        }}
-      >
+      <Button sx={linkActiveContainer}>
         <Box sx={{ display: "flex", flexDirection: "row", gap: 2 }}>
           <PersonOutlineOutlined
             sx={{
@@ -71,15 +59,11 @@ export const Menu = () => {
               fontWeight: 600,
             }}
           />
-          <Typography
-            sx={{
-              fontFamily: "inherit",
-              color: theme.palette.primary.main,
-              fontWeight: 600,
-            }}
-          >
-            Socios
-          </Typography>
+          <CustomTitle
+            title={"Socios"}
+            fontWeight={600}
+            color={theme.palette.primary.main}
+          />
         </Box>
         <KeyboardArrowRight
           sx={{
@@ -88,40 +72,14 @@ export const Menu = () => {
           }}
         />
       </Button>
-      <Button
-        sx={{
-          color: theme.palette.button.main,
-          opacity: 0.6,
-          display: "flex",
-          gap: 2,
-          padding: "20px",
-          cursor: "pointer",
-          fontFamily: "inherit",
-          textTransform: "capitalize",
-          justifyContent: "flex-start",
-          borderRadius: 50,
-        }}
-      >
+      <Button sx={linkContainer}>
         <AccountBalanceOutlined />
-        <Typography sx={{ fontFamily: "inherit" }}>Pagos</Typography>
+        <CustomTitle title={"Pagos"} />
       </Button>
       <Divider sx={{ marginBlock: 2, width: "90%", alignSelf: "center" }} />
-      <Button
-        sx={{
-          color: theme.palette.button.main,
-          opacity: 0.6,
-          display: "flex",
-          gap: 2,
-          padding: "20px",
-          cursor: "pointer",
-          fontFamily: "inherit",
-          textTransform: "capitalize",
-          justifyContent: "flex-start",
-          borderRadius: 50,
-        }}
-      >
+      <Button sx={linkContainer}>
         <SettingsOutlined />
-        <Typography sx={{ fontFamily: "inherit" }}>Ajustes</Typography>
+        <CustomTitle title={"Ajustes"} />
       </Button>
     </Stack>
   );

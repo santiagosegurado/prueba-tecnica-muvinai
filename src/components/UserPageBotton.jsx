@@ -3,15 +3,15 @@ import { Email, WhatsApp } from "@mui/icons-material/";
 import { CustomButton } from "./CustomButton";
 
 export const UserPageBotton = () => {
+  const botttomContainer = {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    mt: 1,
+  };
+
   return (
-    <Box
-      sx={{
-        display: "flex",
-        flexDirection: "row",
-        justifyContent: "space-between",
-        mt: 1
-      }}
-    >
+    <Box sx={botttomContainer}>
       <Box sx={{ display: "flex", flexDirection: "row", gap: 2 }}>
         <CustomButton
           color={"error"}

@@ -4,24 +4,24 @@ import { UserPageBotton } from "./UserPageBotton";
 import { UserPageContent } from "./UserPageContent";
 
 export const UserPage = () => {
+  const containerLayout = {
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "space-between",
+    height: "100%",
+  };
+
+  const userContentContainer = {
+    display: "flex",
+    flexDirection: "column",
+    gap: 3,
+    overflow: "scroll",
+  };
+
   return (
-    <Box
-      sx={{
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "space-between",
-        height: "100%",
-      }}
-    >
+    <Box sx={containerLayout}>
       <UserPageHeader />
-      <Box
-        sx={{
-          display: "flex",
-          flexDirection: "column",
-          gap: 3,
-          overflow: "scroll",
-        }}
-      >
+      <Box sx={userContentContainer}>
         <UserPageContent />
       </Box>
 
