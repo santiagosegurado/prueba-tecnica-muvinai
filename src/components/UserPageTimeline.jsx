@@ -1,4 +1,3 @@
-import { useTheme } from "@emotion/react";
 import { Box, Typography } from "@mui/material";
 import Timeline from "@mui/lab/Timeline";
 import TimelineItem from "@mui/lab/TimelineItem";
@@ -14,7 +13,6 @@ import CheckIcon from "@mui/icons-material/Check";
 import CloseIcon from "@mui/icons-material/Close";
 
 export const UserPageTimeline = () => {
-  const theme = useTheme();
 
   return (
     <Box
@@ -24,18 +22,6 @@ export const UserPageTimeline = () => {
         alignItems: "flex-start",
       }}
     >
-      <Typography
-        sx={{
-          fontFamily: "inherit",
-          fontSize: 20,
-          color: theme.palette.primary.main,
-          fontWeight: 500,
-          opacity: 0.8,
-          mb: 2,
-        }}
-      >
-        Historial de pagos
-      </Typography>
       <Timeline
         sx={{
           [`& .${timelineOppositeContentClasses.root}`]: {

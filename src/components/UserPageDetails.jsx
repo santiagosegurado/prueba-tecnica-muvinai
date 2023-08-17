@@ -13,9 +13,9 @@ export const UserPageDetails = () => {
           flexDirection: "column",
           alignItems: "center",
           position: "relative",
-          overflow: 'hidden',
+          overflow: "hidden",
           "&:hover #target": {
-            bottom: 20
+            bottom: 20,
           },
         }}
       >
